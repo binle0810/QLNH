@@ -1,0 +1,132 @@
+﻿CREATE DATABASE QUANLYNHAHANG2
+
+CREATE TABLE NHANVIEN
+(
+   IDNV nvarCHAR(20),
+   TEN NVARCHAR(40) ,
+   NGAYSINH DATETIME,
+   SDT NVARCHAR(15),
+   GT NVARCHAR(20),
+   DC NVARCHAR(50),
+   NGAYLAM DATETIME,
+   CALAM INT,
+   LUONG FLOAT
+)
+CREATE TABLE KHUYENMAI
+(
+	IDKM varCHAR(10),
+	TENKM NVARCHAR(50),
+	GIAMGIA CHAR(10),
+	NGAYBATDAU SMALLDATETIME,
+	NGAYKETTHUC SMALLDATETIME
+)
+
+CREATE TABLE BAOCAO
+(
+	IDBC varCHAR(20) ,
+	MANVBC varCHAR(20),
+	NGAYTHANG DATETIME,
+	DOANHTHU float,
+	CHIPHI float,
+	LOINHUAN float
+)
+
+CREATE TABLE QUYDINH 
+(
+	MAQD varCHAR(10) ,
+	TENQD NVARCHAR(500),
+	MANVBIPHAT varCHAR(10),
+	HINHTHUCPHAT NVARCHAR(30)
+)
+create table xuathang
+(	
+	idxuat nvarchar(10),
+	ngayxuat datetime,
+	tenhang nvarchar(50),
+	donvitinh nvarchar(50),
+	thanhtien float,
+	soluong int,
+	dongia float,
+	ghichu nvarchar(50)
+)
+create table nhaphang
+(
+	idnhap nvarchar(10),
+	ngaynhap datetime,
+	tenhang nvarchar(50),
+	donvitinh nvarchar(50),
+	thanhtien float,
+	soluong int,
+	dongia float,
+	ghichu nvarchar(50)
+)
+CREATE TABLE KHACHHANG
+(
+    makh nvarCHAR(20),
+    hotenkh NVARCHAR(40) ,
+    ngaysinhkh SMALLDATETIME,
+	gioitinhkh nvarchar(20),
+    sodienthoai NVARCHAR(15),
+    diachi NVARCHAR(20)
+)
+CREATE TABLE DANGNHAP
+(
+	Tendangnhap VarCHAR(20),
+	Mkdangnhap VarCHAR(20)
+)
+
+--------------Insert Dang nhap
+INSERT INTO DANGNHAP VALUES ('nhanvien02','nv01')
+--------------INSERT 
+
+INSERT INTO nhaphang VALUES (N'NH_01','2023/02/15',N'Cánh gà',N'Cái',500000,100,5000,N'Dagiao')
+INSERT INTO nhaphang VALUES (N'NH_02','2023/02/15',N'Thịt bò',N'Kí',3000000,10,300000,N'Dagiao')
+INSERT INTO nhaphang VALUES (N'NH_03','2023/02/15',N'Dâu',N'Kí',1000000,10,100000,N'Dagiao')
+INSERT INTO nhaphang VALUES (N'NH_04','2023/02/15',N'Mực',N'Kí',1600000,8,200000,N'Dagiao')
+INSERT INTO nhaphang VALUES (N'NH_05','2023/02/15',N'Cá chép',N'Kí',750000,15,50000,N'Dagiao')
+
+INSERT INTO xuathang VALUES (N'XH_G1','2023/02/16',N'Coca',N'Lon',400000,50,8000,N'Daxuat')
+INSERT INTO xuathang VALUES (N'XH_G2','2023/02/17',N'Rau củ',N'Kí',500000,25,20000,N'Daxuat')
+INSERT INTO xuathang VALUES (N'XH_G3','2023/02/18',N'Sườn non',N'Kí',2000000,10,200000,N'Daxuat')
+INSERT INTO xuathang VALUES (N'XH_G4','2023/02/19',N'Dầu ăn',N'Thùng',1000000,5,200000,N'Daxuat')
+INSERT INTO xuathang VALUES (N'XH_G5','2023/02/19',N'Gia vị',N'Kí',500000,5,100000,N'Daxuat')
+
+INSERT INTO NHANVIEN VALUES (N'NV_1',N'Nguyễn Thị Hoa','1999/04/19',N'0888238343',N'Nữ',N'Q1 HCM','2022/04/10',1,8000000)
+INSERT INTO NHANVIEN VALUES (N'NV_2',N'Hoàng Văn Tuấn','1997/05/02',N'0389485568',N'Nam',N'Q3 HCM','2022/06/15',1,7500000)
+INSERT INTO NHANVIEN VALUES (N'NV_3',N'Hoàng Thị Thanh','1999/06/25',N'0934345335',N'Nữ',N'Q8 HCM','2022/10/23',3,7000000)
+INSERT INTO NHANVIEN VALUES (N'NV_4',N'Trần Quốc Đạt','1998/12/18',N'0388545658',N'Nam',N'Q1 HCM','2022/08/21',2,7300000)
+INSERT INTO NHANVIEN VALUES (N'NV_5',N'Ngô Thanh Tâm','2000/06/28',N'0894549956',N'Nữ',N'Q3 HCM','2022/07/05',3,7600000)
+
+INSERT INTO KHUYENMAI VALUES(N'KM_01',N'Chương trình khuyến mãi mừng khai trương','40%',2022/06/03,	2022/06/18)
+INSERT INTO KHUYENMAI VALUES(N'KM_03',N'Chương trình khuyến mãi 30/4-01/05','20%',2023/04/28,2023/05/02)
+INSERT INTO KHUYENMAI VALUES(N'KM_02',N'Chương trình khuyến mãi tháng 3/2023','10%',2023/03/01,2023/03/31)
+INSERT INTO KHUYENMAI VALUES(N'KM_04',N'Chương trình khuyến mãi cho khách hàng VIP ','8%',null	,Null)
+
+INSERT INTO BAOCAO VALUES('BC_1',N'NV_1','2022/10/30',230000000,150000000,80000000)
+INSERT INTO BAOCAO VALUES('BC_2',N'NV_2','2022/11/30',235000000,140000000,95000000)
+INSERT INTO BAOCAO VALUES('BC_3',N'NV_3','2022/12/30',220000000,143000000,77000000)
+INSERT INTO BAOCAO VALUES('BC_4',N'NV_4','2022/01/30',320000000,160000000,160000000)
+INSERT INTO BAOCAO VALUES('BC_5',N'NV_5','2022/02/28',280000000,170000000,110000000)
+
+INSERT INTO QUYDINH VALUES('QĐ01',N'Đi muộn, về sớm, tự động nghỉ  khi chưa có sự cho phép của quản lý, giám sát.',N'NV_3',N'-50000')
+INSERT INTO QUYDINH VALUES('QĐ02',N'Hút thuốc lá trong khu vực làm việc',N'NV_2',N'-5%')
+INSERT INTO QUYDINH VALUES('QĐ03',N'Tự ý sử dụng thiết bị của nhà hàng',N'NV_3',N'-5%')
+INSERT INTO QUYDINH VALUES('QĐ04',N'Trộm cắp, chiếm hữu tài sản của nhà hàng hoặc khách hàng',N'NV_4',N'Sa thải')
+INSERT INTO QUYDINH VALUES('QĐ05',N'Cư xử không đúng mực với khách hàng, đồng nghiệp',N'NV_3',N'Sa thải')
+
+INSERT INTO KHACHHANG VALUES(N'KH_01',N'Nguyễn Thị Thanh Nhã','1987/03/20',N'NU',N'0333998584',N'Q1 HCM')
+INSERT INTO KHACHHANG VALUES(N'KH_02',N'Văn Hữu Hiếu','1990/09/23',N'NAM',N'0935747335',N'Q3 HCM')
+INSERT INTO KHACHHANG VALUES(N'KH_03',N'Trần Ái Nhi	Nữ','1999/10/14',N'NU',N'0939538835',N'Q10 HCM')
+INSERT INTO KHACHHANG VALUES(N'KH_04',N'Lưu Bảo Minh','03/01/1993',N'NAM',N'0845458335',N'Q1 HCM')
+INSERT INTO KHACHHANG VALUES(N'KH_05',N'Đỗ Thành Đạt','1995/02/18',N'NAM',N'0344588439',N'Q3 HCM')
+
+
+-------DROP TABLE
+DROP TABLE NHANVIEN
+DROP TABLE KHACHHANG
+DROP TABLE KHUYENMAI
+DROP TABLE BAOCAO
+DROP TABLE QUYDINH
+drop table xuathang
+drop table nhaphang
+drop table DANGNHAP
